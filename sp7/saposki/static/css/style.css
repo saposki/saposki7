@@ -53,3 +53,24 @@ h2{
 .name{
 	font-weight: 100;
 }
+footer{
+	margin: 0 auto;
+	width: 960px;
+	border-top: solid #cccccc 1px;
+}
+.footer-list{
+	margin: 0 auto;
+	width: 600px;
+	height: 80px;
+}
+.footer-list ul{
+
+	margin: 0 auto;
+}
+
+.footer-list li{
+	margin-top: 5px;
+	width: 12.5%;
+	float: left;
+	list-style: none;
+}
