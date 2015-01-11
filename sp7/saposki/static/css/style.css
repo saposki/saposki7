@@ -19,7 +19,7 @@ h2{
 	width: 960px;
 }
 .nav-container{
-	height: 50px;
+	height: 35px;
 	width: 960px;
 	border-bottom: solid #cccccc 1px;
 }
@@ -40,7 +40,7 @@ h2{
 	font-family: helvetica;
 	font-weight: 100;
 	font-size: 13px;
-	padding-left: 4px;
+	padding-left: 10px;
 }
 .nav-list a{
 	text-decoration: none;
@@ -52,6 +52,11 @@ h2{
 
 .name{
 	font-weight: 100;
+}
+.content{
+	width: 960px;
+	height: 533px;
+	margin: 0 auto;
 }
 footer{
 	margin: 0 auto;

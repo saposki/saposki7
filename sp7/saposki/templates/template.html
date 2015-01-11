@@ -12,29 +12,30 @@
 					</div><!--end logo-->
 					<div class="nav-list">
 					<ul>
-						<li><a href="http://127.0.0.1:5000/portrait">Portraits</a>
+						<li><a href="/portrait">Portraits</a>
 						</li>
 
-						<li><a href="http://127.0.0.1:5000/lifestyle">Lifestyle</a>
+						<li><a href="/lifestyle">Lifestyle</a>
 						</li>
 					
-						<li><a href="http://127.0.0.1:5000/candid">Candid</a>
+						<li><a href="/candid">Candid</a>
 						</li>
 
+						<li><a href="/contact">Contact</a>
 						</li>
 
-						<li><a href="http://127.0.0.1:5000/contact">Contact</a>
-						</li>
-
-						<li><a href="http://127.0.0.1:5000/login">Login</a>
+						<li><a href="/login">Login</a>
 						</li>
 					</ul>
 					</div> <!--end nav-list-->
 			</div><!--end nav-container -->
 		</div><!--end containerizer -->
 
-		{% block content %}
-		{% endblock %}
+		
+		<section class="content">
+			{% block content %}
+			{% endblock %}
+		</section>
 		<footer>
 			<div class="footer-list">
 				<ul>
