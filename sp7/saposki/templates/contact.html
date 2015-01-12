@@ -1,4 +1,15 @@
 {% extends "template.html" %}
 {% block content %}
 	<h2 class="name">Contact</h2>
-{% endblock %}
+	<form>
+		<input type="text" name="fname" placeholder="first name">
+		<input type="text" name="lname" placeholder="last name">
+		<input type="text" name="email" placeholder="email">
+		<select> 
+			<option value="portrait">portrait</option>
+			<option value="engagement">engagement</option>
+			<option value="wedding">wedding</option>
+		</select>
+		<input type="submit" value="Submit">
+	</form>
+{% endblock %}s

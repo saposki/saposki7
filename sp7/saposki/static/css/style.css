@@ -79,3 +79,9 @@ footer{
 	float: left;
 	list-style: none;
 }
+form{
+	width: 800px;
+	margin: 0 auto;
+	padding-top: 30px;
+	text-align: center;
+}
