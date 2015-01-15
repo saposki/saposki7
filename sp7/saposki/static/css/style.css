@@ -4,6 +4,10 @@ h1{
 	width: 480px;
 	font-family: helvetica;
 	color: #cccccc;
+	text-decoration: none;
+}
+a{
+	text-decoration: none;
 }
 h2{
 	display: box;
@@ -84,4 +88,31 @@ form{
 	margin: 0 auto;
 	padding-top: 30px;
 	text-align: center;
+}
+
+.login{
+	width: 800px;
+	margin: 0 auto;
+	padding-top: 30px;
+	text-align: center;
+	font-family: helvetica;
+	font-weight: 200;
+}
+
+.login h3, p, a{
+	color: #cccccc;
+}
+a:hover{
+	color: black;
+}
+.logout{
+	text-align: center;
+	font-family: helvetica;
+	font-weight: 100;
+}
+.flash {
+	float: right;
+	width: 400px;
+	text-align: right;
+	font-family: helvetica;
 }

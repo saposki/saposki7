@@ -8,11 +8,11 @@
 	<body>
 		<div class="containerizer">
 			<div class="nav-container">
-					<div class="logo"><h1>SAPOSKI</h1>
+					<div class="logo"><a href="/"><h1>SAPOSKI</h1></a>
 					</div><!--end logo-->
 					<div class="nav-list">
 					<ul>
-						<li><a href="/portrait">Portraits</a>
+						<li><a class="portrait" href="/portrait">Portraits</a>
 						</li>
 
 						<li><a href="/lifestyle">Lifestyle</a>
@@ -33,6 +33,15 @@
 
 		
 		<section class="content">
+			{% for message in get_flashed_messages() %}
+				<div class="flash"><p>{{ message }}</p></div>
+			{% endfor %}
+			{% if error %}
+				<p class="error"><strong>Error:</strong>{{ error }}</p>
+			{% endif %}
+
+
+
 			{% block content %}
 			{% endblock %}
 		</section>

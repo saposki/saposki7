@@ -18,3 +18,5 @@ with sqlite3.connect("sblog.db") as connection:
 	c.execute('INSERT INTO posts VALUES("Well", "I\'m well.")')
 	c.execute('INSERT INTO posts VALUES("Kras", "I\'m kras.")')
 	c.execute('INSERT INTO posts VALUES("Okay", "I\'m okay.")')
+
+	
