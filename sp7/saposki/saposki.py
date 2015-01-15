@@ -55,15 +55,14 @@ def add():
 	
 
 	g.db = connect_db()
-	g.db.execute('insert into posts (fname, lname, email) values(?, ?, ?)', 
-	[request.form['fname'], request.form['lname'], request.form['email']])
+	g.db.execute('insert into posts (fname, lname, email) values(?, ?, ?)', [request.form['fname'], request.form['lname'], request.form['email']])
 	g.db.commit()
 	g.db.close()
 	flash('Thank You, We will be in touch')
 	return redirect(url_for('home'))
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
+@app.route('/admin', methods=['GET', 'POST'])
+def admin():
 	error = None
 	if request.method == 'POST':
 		if request.form['username'] != app.config['USERNAME'] or request.form['password'] != app.config['PASSWORD']:
@@ -71,7 +70,7 @@ def login():
 		else:
 			session['logged_in'] = True
 			return redirect(url_for('listcomments'))
-	return	render_template('login.html', error=error)
+	return	render_template('admin.html', error=error)
 
 def login_required(test):
 	@wraps(test)
@@ -80,7 +79,7 @@ def login_required(test):
 			return test(*args, **kwargs)
 		else:
 			flash('You need to login first.')
-			return redirect(url_for('login'))
+			return redirect(url_for('admin'))
 	return wrap
 
 @app.route('/list-comments')
@@ -88,7 +87,7 @@ def login_required(test):
 def listcomments():
 	g.db = connect_db()
 	cur = g.db.execute('select * from posts')
-	posts = [dict(title=row[0], post=row[1]) for row in cur.fetchall()]
+	posts = [dict(fname=row[0], lname=row[1], email=row[2]) for row in cur.fetchall()]
 	g.db.close()
 
 	return render_template('list-comments.html', posts=posts)
@@ -97,7 +96,7 @@ def listcomments():
 def logout():
 	session.pop('logged_in', None)
 	flash('You were logged out')
-	return redirect(url_for('login'))
+	return redirect(url_for('admin'))
 
 
 if __name__ == "__main__":

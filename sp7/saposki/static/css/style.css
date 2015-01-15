@@ -109,12 +109,14 @@ a:hover{
 	text-align: center;
 	font-family: helvetica;
 	font-weight: 100;
+	margin-top: 20px;
 }
 .flash {
 	float: right;
 	width: 400px;
 	text-align: right;
 	font-family: helvetica;
+	font-weight: 100;
 }
 .comments, 	.comment-head, .comment-content{
 	font-family: helvetica;

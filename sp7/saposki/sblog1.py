@@ -14,5 +14,5 @@ with sqlite3.connect("sblog.db") as connection:
 			""")
 
 	#insert dummy data into the table
-	c.execute('INSERT INTO posts VALUES("Orobosa", "Omorgie", "Orobosa@yahoo.com")')
+	#c.execute('INSERT INTO posts VALUES("Orobosa", "Omoregie", "Orobosa@yahoo.com")')
 	
