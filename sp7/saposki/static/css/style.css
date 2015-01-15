@@ -116,3 +116,14 @@ a:hover{
 	text-align: right;
 	font-family: helvetica;
 }
+.comments, 	.comment-head, .comment-content{
+	font-family: helvetica;
+	font-weight: 100;
+}
+.comment-head{
+	margin-bottom: -30px;
+	border-bottom: solid #cccccc 1px;
+}
+.comment-content{
+	margin-bottom: -25px;
+}

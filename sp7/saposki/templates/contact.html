@@ -1,7 +1,7 @@
 {% extends "template.html" %}
 {% block content %}
 	<h2 class="name">Contact</h2>
-	<form>
+	<form action="{{  url_for('add') }}" method="post" class="add">
 		<input type="text" name="fname" placeholder="first name">
 		<input type="text" name="lname" placeholder="last name">
 		<input type="text" name="email" placeholder="email">

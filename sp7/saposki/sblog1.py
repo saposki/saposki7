@@ -2,7 +2,7 @@
 
 import sqlite3
 
-#create a new database if the databasedoesn't already exist
+#create a new database if the database doesn't already exist
 with sqlite3.connect("sblog.db") as connection:
 
 	#get a cursor 
@@ -10,13 +10,9 @@ with sqlite3.connect("sblog.db") as connection:
 
 	#create the table 
 	c.execute("""CREATE TABLE posts
-		(title TEXT, post TEXT)
+		(fname TEXT, lname TEXT, email TEXT)
 			""")
 
 	#insert dummy data into the table
-	c.execute('INSERT INTO posts VALUES("Good", "I\'m good.")')
-	c.execute('INSERT INTO posts VALUES("Well", "I\'m well.")')
-	c.execute('INSERT INTO posts VALUES("Kras", "I\'m kras.")')
-	c.execute('INSERT INTO posts VALUES("Okay", "I\'m okay.")')
-
+	c.execute('INSERT INTO posts VALUES("Orobosa", "Omorgie", "Orobosa@yahoo.com")')
 	

@@ -47,6 +47,21 @@ def about():
 def contact():
 	return	render_template('contact.html')
 
+@app.route('/add', methods=['POST'])
+def add():
+	fname = request.form['fname']
+	lname = request.form['lname']
+	email = request.form['email']
+	
+
+	g.db = connect_db()
+	g.db.execute('insert into posts (fname, lname, email) values(?, ?, ?)', 
+	[request.form['fname'], request.form['lname'], request.form['email']])
+	g.db.commit()
+	g.db.close()
+	flash('Thank You, We will be in touch')
+	return redirect(url_for('home'))
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
 	error = None
@@ -71,7 +86,12 @@ def login_required(test):
 @app.route('/list-comments')
 @login_required
 def listcomments():
-	return render_template('list-comments.html')
+	g.db = connect_db()
+	cur = g.db.execute('select * from posts')
+	posts = [dict(title=row[0], post=row[1]) for row in cur.fetchall()]
+	g.db.close()
+
+	return render_template('list-comments.html', posts=posts)
 
 @app.route('/logout')
 def logout():
