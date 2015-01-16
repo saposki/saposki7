@@ -1,0 +1,14 @@
+{% extends "template.html" %}
+
+{% block content %}
+	<h2 class="name">Comments</h2>
+		<div class="comments">
+			<br><pre class="comment-head">FIRST NAME 			LAST NAME 			EMAIL 					INQUIRE</pre></br>
+			<br>
+			{% for p in posts %}
+			<pre class="comment-content">{{ p.fname }} 				{{ p.lname }} 			{{p.email}}</pre></br>
+			{% endfor %}
+		</div>
+	<div class="logout"><a href="/logout">Logout</a>
+	</div>
+{% endblock %}
